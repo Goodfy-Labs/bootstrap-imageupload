@@ -1,3 +1,5 @@
+**Warning**: this repository is unmaintained. Fork at your own risk.
+
 # bootstrap-imageupload
 
 A [Bootstrap](https://getbootstrap.com/)/[jQuery](https://jquery.com/) plugin to preview image uploads.
