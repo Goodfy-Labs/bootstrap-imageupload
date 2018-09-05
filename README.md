@@ -13,14 +13,14 @@ A [Bootstrap](https://getbootstrap.com/)/[jQuery](https://jquery.com/) plugin to
 
 ## Demo
 
-[https://egonolieux.github.io/bootstrap-imageupload](https://egonolieux.github.io/bootstrap-imageupload)
+[https://nerdy-harry.github.io/bootstrap-imageupload](https://nerdy-harry.github.io/bootstrap-imageupload)
 
 ## Installation
 
 Following installation options are available:
 
 - Download and include the files manually.
-- Install with [npm](https://www.npmjs.com): `npm install bootstrap-imageupload --save`.
+- Install with [npm](https://www.npmjs.com): `npm install bootstrap-imageupload-src --save`.
 
 ## Usage
 
@@ -73,6 +73,7 @@ Copy this snippet into your HTML.
 | maxWidth       | Number | 250                           |
 | maxHeight      | Number | 250                           |
 | maxFileSizeKb  | Number | 2048                          |
+| imgSrc         | String | ''                            |
 
 #### Methods
 
@@ -84,7 +85,8 @@ If no options are given, defaults are used.
 ```JavaScript
 $('#my-imageupload').imageupload({
     allowedFormats: [ 'jpg' ],
-    maxFileSizeKb: 512
+    maxFileSizeKb: 512,
+    imgSrc: "http://www.gstatic.com/webp/gallery/5.jpg"
 });
 ```
 

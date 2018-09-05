@@ -38,7 +38,8 @@ if (typeof jQuery === 'undefined') {
         allowedFormats: [ 'jpg', 'jpeg', 'png', 'gif' ],
         maxWidth: 250,
         maxHeight: 250,
-        maxFileSizeKb: 2048
+        maxFileSizeKb: 2048,
+        imgSrc: ''
     };
 
     // -----------------------------------------------------------------------------
@@ -101,6 +102,13 @@ if (typeof jQuery === 'undefined') {
             $(this).blur();
             resetUrlTab($urlTab);
         });
+
+        // Display image from given src
+        if(options.imgSrc !== '')
+        {
+          showImageSrc($fileTab, options.imgSrc);
+          options.imgSrc = '';
+        }
     }
 
     function disable() {
@@ -273,6 +281,24 @@ if (typeof jQuery === 'undefined') {
 
             $browseFileButton.prop('disabled', false);
         });
+    }
+
+    function showImageSrc($fileTab, imgSrc) {
+        var $browseFileButton = $fileTab.find('.btn:eq(0)');
+        var $removeFileButton = $fileTab.find('.btn:eq(1)');
+        var $fileInput = $browseFileButton.find('input');
+
+        $fileTab.find('.alert').remove();
+        $fileTab.find('img').remove();
+        $browseFileButton.find('span').text('Browse');
+        $removeFileButton.hide();
+        $browseFileButton.prop('disabled', true);
+
+        // Show thumbnail and remove button.
+        $fileTab.prepend(getImageThumbnailHtml(imgSrc));
+        $browseFileButton.find('span').text('Change');
+        $removeFileButton.css('display', 'inline-block');
+        $browseFileButton.prop('disabled', false);
     }
 
     function showUrlTab($urlTab) {

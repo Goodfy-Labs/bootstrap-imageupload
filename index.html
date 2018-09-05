@@ -42,7 +42,7 @@
                             <a href="">Demo</a>
                         </li>
                         <li>
-                            <a href="https://github.com/egonolieux/bootstrap-imageupload">GitHub</a>
+                            <a href="https://github.com/nerdy-harry/bootstrap-imageupload">GitHub</a>
                         </li>
                     </ul>
                 </div>
@@ -96,7 +96,7 @@
 
         <script>
             var $imageupload = $('.imageupload');
-            $imageupload.imageupload();
+            $imageupload.imageupload({ imgSrc: "http://www.gstatic.com/webp/gallery/5.jpg" });
 
             $('#imageupload-disable').on('click', function() {
                 $imageupload.imageupload('disable');
